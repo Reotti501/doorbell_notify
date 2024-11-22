@@ -1,11 +1,10 @@
 import pyaudio
 import wave
 
-input_device_index = 1 # 先ほど確認したデバイス番号
-
+input_device_index = 1 # 前回確認したデバイス番号
 CHUNK = 1024*4
 FORMAT = pyaudio.paInt16
-CHANNELS = 1 # モノラル入力 # 先ほど確認したmaxInputChannelsが上限
+CHANNELS = 1 # モノラル入力 # 前回確認したmaxInputChannelsが上限
 RATE = 44100
 RECORD_SECONDS = 5
 WAVE_OUTPUT_FILENAME = "output.wav"
@@ -17,14 +16,12 @@ stream = p.open(format=FORMAT,
                 rate=RATE,
                 input=True,
                 frames_per_buffer=CHUNK)
-
 print("Recording...")
 frames = []
 for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
     data = stream.read(CHUNK)
     frames.append(data)
 print("Done!")
-
 stream.stop_stream()
 stream.close()
 p.terminate()
