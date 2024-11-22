@@ -1,9 +1,9 @@
 import pyaudio
 import wave
 
-input_device_index = 2 # 先ほど確認したデバイス番号
+input_device_index = 1 # 先ほど確認したデバイス番号
 
-CHUNK = 1024
+CHUNK = 1024*4
 FORMAT = pyaudio.paInt16
 CHANNELS = 1 # モノラル入力 # 先ほど確認したmaxInputChannelsが上限
 RATE = 44100
