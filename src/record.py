@@ -1,5 +1,6 @@
 import pyaudio
 import wave
+from error_hider import noalsaerr # ↑のコードをimport
 
 input_device_index = 1 # 前回確認したデバイス番号
 CHUNK = 1024*4
@@ -9,7 +10,10 @@ RATE = 44100
 RECORD_SECONDS = 5
 WAVE_OUTPUT_FILENAME = "output.wav"
 
-p = pyaudio.PyAudio()
+# ↓↓↓ここを変更
+with noalsaerr():
+    p = pyaudio.PyAudio()
+# ↑↑↑
 stream = p.open(format=FORMAT,
                 channels=CHANNELS,
                 input_device_index = input_device_index,
@@ -19,9 +23,7 @@ stream = p.open(format=FORMAT,
 print("Recording...")
 frames = []
 for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
-    # ↓↓↓ここを変更
     data = stream.read(CHUNK, exception_on_overflow=False)
-    # ↑↑↑
     frames.append(data)
 print("Done!")
 stream.stop_stream()
