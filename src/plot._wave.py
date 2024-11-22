@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
  
-file_name = "src/output.wav" # 録音ファイル
+file_name = "src/sounds/doorbelldefault.wav" # 録音ファイル
 RATE = 44100 # 録音時に設定したRATE
 CHUNK = 1024 * 4 # 録音時に設定したCHUNK
 RECORD_SECONDS = 1 # 検出に使いたい秒数
