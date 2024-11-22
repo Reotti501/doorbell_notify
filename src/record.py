@@ -19,7 +19,9 @@ stream = p.open(format=FORMAT,
 print("Recording...")
 frames = []
 for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
-    data = stream.read(CHUNK)
+    # ↓↓↓ここを変更
+    data = stream.read(CHUNK, exception_on_overflow=False)
+    # ↑↑↑
     frames.append(data)
 print("Done!")
 stream.stop_stream()
