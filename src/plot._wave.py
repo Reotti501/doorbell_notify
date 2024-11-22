@@ -9,9 +9,8 @@ wf = wave.open(file_name, "rb")
 data = np.frombuffer(wf.readframes(wf.getnframes()), dtype='int16')
 wf.close()
 
-x = np.arange(data.shape[0]) / RATE
-plt.plot(x, data)
-plt.show() # 横軸:時間(sec)
-x = [i for i in range(len(data))]
-plt.plot(x, data)
-plt.show() # 横軸:データ点インデックス
+fft_data = np.abs(np.fft.fft(data))    #FFTした信号の強度
+freqList = np.fft.fftfreq(data.shape[0], d=1.0/RATE)    #周波数（グラフの横軸）の取得
+plt.plot(freqList, fft_data)
+plt.xlim(0, 5000)    #0～5000Hzまでとりあえず表示する
+plt.show()
