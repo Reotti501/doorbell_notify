@@ -1,6 +1,6 @@
 import pyaudio
 import wave
-from error_hider import noalsaerr # ↑のコードをimport
+#from error_hider import noalsaerr # ↑のコードをimport
 
 input_device_index = 1 # 前回確認したデバイス番号
 CHUNK = 1024*4
@@ -8,7 +8,7 @@ FORMAT = pyaudio.paInt16
 CHANNELS = 1 # モノラル入力 # 前回確認したmaxInputChannelsが上限
 RATE = 44100
 RECORD_SECONDS = 5
-WAVE_OUTPUT_FILENAME = "output.wav"
+WAVE_OUTPUT_FILENAME = "./src/sounds/output.wav"
 
 # ↓↓↓ここを変更
 with noalsaerr():
