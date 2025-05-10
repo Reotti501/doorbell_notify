@@ -14,6 +14,10 @@
 * Raspberry Pi 4B 8GB   (Raspberry Pi OS 64bit)
 * Python 3.11.2
 
+## 必要なもの
+* LINE Messaging API Key
+* LinuxOSコンピュータ
+
 > [!IMPORTANT]  
 >[ENV_README.md](./ENV_README.md)にもあるようにdockerでは仮想環境のため基本的に音を取得することができないため、実行しても下記のエラーが表示されます。
 >
