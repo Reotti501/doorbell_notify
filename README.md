@@ -15,7 +15,7 @@
 * Python 3.11.2
 
 > [!IMPORTANT]  
->ENV_README.mdにもあるようにdockerでは仮想環境のため基本的に音を取得することができないため、実行しても下記のエラーが表示されます。
+>[ENV_README.md](./ENV_README.md)にもあるようにdockerでは仮想環境のため基本的に音を取得することができないため、実行しても下記のエラーが表示されます。
 >
 >        Cannot connect to server socket err = No such file or directory
 >        Cannot connect to server request channel
