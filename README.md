@@ -1,7 +1,7 @@
 # Raspberry Piでインターホンの音を検知してLINEに通知する
 
 ## はじめに
-[このページ](https://qiita.com/nkgwwwww/items/cd0e7433cfc4b2ea0a59)を参考に一部改変しました。 とても分かりやすかったです　先人に最大限の敬意を(｀･ω･´)ゞ
+[このページ](https://qiita.com/nkgwwwww/items/cd0e7433cfc4b2ea0a59)を参考にしています。
 
 ## 開発/実行環境
 ### 開発環境
